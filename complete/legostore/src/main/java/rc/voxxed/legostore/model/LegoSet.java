@@ -17,7 +17,7 @@ public class LegoSet {
     @Indexed(direction = IndexDirection.ASCENDING)
     private String name;
     private LegoSetDifficulty difficulty;
-    private String themae;
+    private String theme;
     private Collection<ProductReview> reviews = new ArrayList<>();
     @Field("delivery")
     private DeliveryInfo deliveryInfo;
