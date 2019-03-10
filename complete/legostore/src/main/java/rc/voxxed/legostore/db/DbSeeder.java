@@ -1,7 +1,6 @@
 package rc.voxxed.legostore.db;
 
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
 import rc.voxxed.legostore.model.DeliveryInfo;
 import rc.voxxed.legostore.model.LegoSet;
@@ -14,16 +13,17 @@ import java.util.List;
 
 @Service
 public class DbSeeder implements CommandLineRunner {
-    private MongoTemplate mongoTemplate;
+    private LegoSetRepository legoSetRepository;
 
-    public DbSeeder(MongoTemplate mongoTemplate) {
-        this.mongoTemplate = mongoTemplate;
+    public DbSeeder(LegoSetRepository legoSetRepository) {
+        this.legoSetRepository = legoSetRepository;
     }
+
 
     @Override
     public void run(String... args) throws Exception {
         // Initial delete => start clean
-        this.mongoTemplate.dropCollection(LegoSet.class);
+        this.legoSetRepository.deleteAll();
 
         /*
         Lego Sets
@@ -76,10 +76,8 @@ public class DbSeeder implements CommandLineRunner {
         );
 
         // Populate collections
-        this.mongoTemplate.save(milleniumFalcon);
-        this.mongoTemplate.save(skyPolice);
-        this.mongoTemplate.save(mindstormsEve);
-        this.mongoTemplate.save(mcLarenSenna);
+        var legosets = List.of(milleniumFalcon, skyPolice, mindstormsEve, mcLarenSenna);
+        this.legoSetRepository.saveAll(legosets);
 
         System.out.printf("Lego Store DataBase Initialized");
     }
