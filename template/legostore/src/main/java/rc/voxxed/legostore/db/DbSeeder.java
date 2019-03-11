@@ -24,7 +24,7 @@ public class DbSeeder implements CommandLineRunner {
                 "Millennium Falcon",
                 "Star Wars",
                 LegoSetDifficulty.HARD,
-                new DeliveryInfo(LocalDate.now().plusDays(3), BigDecimal.valueOf(50), true),
+                new DeliveryInfo(LocalDate.now().plusDays(3), 50, true),
                 List.of(
                         new ProductReview("Dan", 7),
                         new ProductReview("Anna", 10),
@@ -36,7 +36,7 @@ public class DbSeeder implements CommandLineRunner {
                 "Sky Police Air Base",
                 "City",
                 LegoSetDifficulty.MEDIUM,
-                new DeliveryInfo(LocalDate.now().plusDays(8), BigDecimal.valueOf(40), true),
+                new DeliveryInfo(LocalDate.now().plusDays(8), 40, true),
                 List.of(
                         new ProductReview("Dan", 5),
                         new ProductReview("Andrew", 8)
@@ -47,7 +47,7 @@ public class DbSeeder implements CommandLineRunner {
                 "McLaren Senna",
                 "Speed Champions",
                 LegoSetDifficulty.EASY,
-                new DeliveryInfo(LocalDate.now().plusDays(3), BigDecimal.valueOf(50), false),
+                new DeliveryInfo(LocalDate.now().plusDays(3), 50, false),
                 List.of(
                         new ProductReview("Bogdan", 9),
                         new ProductReview("Christa", 9)
@@ -58,7 +58,7 @@ public class DbSeeder implements CommandLineRunner {
                 "MINDSTORMS EV3",
                 "Mindstorms",
                 LegoSetDifficulty.HARD,
-                new DeliveryInfo(LocalDate.now().plusDays(21), BigDecimal.valueOf(100), true),
+                new DeliveryInfo(LocalDate.now().plusDays(21), 100, true),
                 List.of(
                         new ProductReview("Cosmin", 10),
                         new ProductReview("Jane", 9),

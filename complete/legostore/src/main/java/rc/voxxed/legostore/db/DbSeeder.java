@@ -1,6 +1,7 @@
 package rc.voxxed.legostore.db;
 
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Service;
 import rc.voxxed.legostore.model.DeliveryInfo;
 import rc.voxxed.legostore.model.LegoSet;
@@ -12,6 +13,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Service
+@ConditionalOnProperty(name = "legostore.initdb", havingValue = "true")
 public class DbSeeder implements CommandLineRunner {
     private LegoSetRepository legoSetRepository;
 
@@ -33,7 +35,7 @@ public class DbSeeder implements CommandLineRunner {
                 "Millennium Falcon",
                 "Star Wars",
                 LegoSetDifficulty.HARD,
-                new DeliveryInfo(LocalDate.now().plusDays(3), BigDecimal.valueOf(50), true),
+                new DeliveryInfo(LocalDate.now().plusDays(3), 50, true),
                 List.of(
                         new ProductReview("Dan", 7),
                         new ProductReview("Anna", 10),
@@ -45,7 +47,7 @@ public class DbSeeder implements CommandLineRunner {
                 "Sky Police Air Base",
                 "City",
                 LegoSetDifficulty.MEDIUM,
-                new DeliveryInfo(LocalDate.now().plusDays(8), BigDecimal.valueOf(40), true),
+                new DeliveryInfo(LocalDate.now().plusDays(8), 40, true),
                 List.of(
                         new ProductReview("Dan", 5),
                         new ProductReview("Andrew", 8)
@@ -56,7 +58,7 @@ public class DbSeeder implements CommandLineRunner {
                 "McLaren Senna",
                 "Speed Champions",
                 LegoSetDifficulty.EASY,
-                new DeliveryInfo(LocalDate.now().plusDays(3), BigDecimal.valueOf(50), false),
+                new DeliveryInfo(LocalDate.now().plusDays(3), 60, false),
                 List.of(
                         new ProductReview("Bogdan", 9),
                         new ProductReview("Christa", 9)
@@ -67,7 +69,7 @@ public class DbSeeder implements CommandLineRunner {
                 "MINDSTORMS EV3",
                 "Mindstorms",
                 LegoSetDifficulty.HARD,
-                new DeliveryInfo(LocalDate.now().plusDays(21), BigDecimal.valueOf(100), true),
+                new DeliveryInfo(LocalDate.now().plusDays(21), 100, true),
                 List.of(
                         new ProductReview("Cosmin", 10),
                         new ProductReview("Jane", 9),
