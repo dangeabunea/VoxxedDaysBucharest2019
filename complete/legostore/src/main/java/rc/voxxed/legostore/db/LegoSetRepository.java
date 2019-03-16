@@ -1,6 +1,7 @@
 package rc.voxxed.legostore.db;
 
 import org.springframework.data.domain.Sort;
+import org.springframework.data.mongodb.core.query.TextCriteria;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 import org.springframework.data.querydsl.QuerydslPredicateExecutor;
@@ -20,4 +21,6 @@ public interface LegoSetRepository extends
 
     @Query("{'reviews.rating' : {$gt: 9}}")
     Collection<LegoSet> findByGoodReviews();
+
+    Collection<LegoSet> findAllBy(TextCriteria textCriteria);
 }

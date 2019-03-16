@@ -1,6 +1,7 @@
 package rc.voxxed.legostore.api;
 
 import org.springframework.data.domain.Sort;
+import org.springframework.data.mongodb.core.query.TextCriteria;
 import org.springframework.web.bind.annotation.*;
 import rc.voxxed.legostore.db.LegoSetRepository;
 import rc.voxxed.legostore.db.ReportingRepository;
@@ -89,6 +90,13 @@ public class LegoStoreController {
     @GetMapping("/avgRatingsReport")
     public Collection<AvgRatingModel> avgRatingReport(){
         var results = this.reportingRepository.getAvgRatingReport();
+        return results;
+    }
+
+    @GetMapping("/fullTextSearch/{text}")
+    public Collection<LegoSet> byFullTextSearch(@PathVariable String text){
+        var textCriteria = TextCriteria.forDefaultLanguage().matching(text);
+        var results = this.legoSetRepository.findAllBy(textCriteria);
         return results;
     }
 }
