@@ -24,6 +24,7 @@ public class LegoSet {
     private Collection<ProductReview> reviews = new ArrayList<>();
     @Field("delivery")
     private DeliveryInfo deliveryInfo;
+    private int price;
 
     public LegoSet(String name,
                    String theme,
@@ -61,5 +62,9 @@ public class LegoSet {
 
     public Collection<ProductReview> getReviews() {
         return Collections.unmodifiableCollection(this.reviews);
+    }
+
+    public int getPrice() {
+        return price;
     }
 }
