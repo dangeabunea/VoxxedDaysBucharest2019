@@ -1,0 +1,369 @@
+{
+	"info": {
+		"_postman_id": "6ea9a7bd-3b90-48eb-9efe-ec1b740f4a81",
+		"name": "VoxxedDaysBucharest2019LegoStore",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"NASA Apollo Saturn V\",\r\n    \"difficulty\" : \"MEDIUM\",\r\n    \"theme\" : \"NASA\",\r\n    \"reviews\" : [ \r\n        {\r\n            \"userName\" : \"Joe\",\r\n            \"rating\" : 9\r\n        }\r\n    ],\r\n    \"deliveryInfo\" : {\r\n        \"deliveryDate\" : \"2019-03-23T18:25:43.511Z\",\r\n        \"deliveryFee\" : \"50\",\r\n        \"inStock\" : true\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "{{base_rul}}",
+					"host": [
+						"{{base_rul}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"id\": \"5c8671fcf33c1f15b0529948\",\r\n    \"name\" : \"NASA Apollo Saturn V\",\r\n    \"difficulty\" : \"HARD\",\r\n    \"theme\" : \"NASA\",\r\n    \"reviews\" : [ \r\n        {\r\n            \"userName\" : \"Joe\",\r\n            \"rating\" : 9\r\n        },\r\n        {\r\n            \"userName\" : \"Mary\",\r\n            \"rating\" : 4\r\n        }\r\n    ],\r\n    \"deliveryInfo\" : {\r\n        \"deliveryDate\" : \"2019-03-23T18:25:43.511Z\",\r\n        \"deliveryFee\" : \"50\",\r\n        \"inStock\" : true\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "{{base_rul}}",
+					"host": [
+						"{{base_rul}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"id\": \"5c8671fcf33c1f15b0529948\",\r\n    \"name\" : \"NASA Apollo Saturn V\",\r\n    \"difficulty\" : \"HARD\",\r\n    \"theme\" : \"NASA\",\r\n    \"reviews\" : [ \r\n        {\r\n            \"userName\" : \"Joe\",\r\n            \"rating\" : 9\r\n        },\r\n        {\r\n            \"userName\" : \"Mary\",\r\n            \"rating\" : 4\r\n        }\r\n    ],\r\n    \"deliveryInfo\" : {\r\n        \"deliveryDate\" : \"2019-03-23T18:25:43.511Z\",\r\n        \"deliveryFee\" : \"50\",\r\n        \"inStock\" : true\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "{{base_rul}}/5c8671fcf33c1f15b0529948",
+					"host": [
+						"{{base_rul}}"
+					],
+					"path": [
+						"5c8671fcf33c1f15b0529948"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ByID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"id\": \"5c8671fcf33c1f15b0529948\",\r\n    \"name\" : \"NASA Apollo Saturn V\",\r\n    \"difficulty\" : \"HARD\",\r\n    \"theme\" : \"NASA\",\r\n    \"reviews\" : [ \r\n        {\r\n            \"userName\" : \"Joe\",\r\n            \"rating\" : 9\r\n        },\r\n        {\r\n            \"userName\" : \"Mary\",\r\n            \"rating\" : 4\r\n        }\r\n    ],\r\n    \"deliveryInfo\" : {\r\n        \"deliveryDate\" : \"2019-03-23T18:25:43.511Z\",\r\n        \"deliveryFee\" : \"50\",\r\n        \"inStock\" : true\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "{{base_rul}}/5c8671fcf33c1f15b0529948",
+					"host": [
+						"{{base_rul}}"
+					],
+					"path": [
+						"5c8671fcf33c1f15b0529948"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ByTheme",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"id\": \"5c8671fcf33c1f15b0529948\",\r\n    \"name\" : \"NASA Apollo Saturn V\",\r\n    \"difficulty\" : \"HARD\",\r\n    \"theme\" : \"NASA\",\r\n    \"reviews\" : [ \r\n        {\r\n            \"userName\" : \"Joe\",\r\n            \"rating\" : 9\r\n        },\r\n        {\r\n            \"userName\" : \"Mary\",\r\n            \"rating\" : 4\r\n        }\r\n    ],\r\n    \"deliveryInfo\" : {\r\n        \"deliveryDate\" : \"2019-03-23T18:25:43.511Z\",\r\n        \"deliveryFee\" : \"50\",\r\n        \"inStock\" : true\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "{{base_rul}}/byTheme/Star",
+					"host": [
+						"{{base_rul}}"
+					],
+					"path": [
+						"byTheme",
+						"Star"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ByDeliveryPriceLessThan",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"id\": \"5c8671fcf33c1f15b0529948\",\r\n    \"name\" : \"NASA Apollo Saturn V\",\r\n    \"difficulty\" : \"HARD\",\r\n    \"theme\" : \"NASA\",\r\n    \"reviews\" : [ \r\n        {\r\n            \"userName\" : \"Joe\",\r\n            \"rating\" : 9\r\n        },\r\n        {\r\n            \"userName\" : \"Mary\",\r\n            \"rating\" : 4\r\n        }\r\n    ],\r\n    \"deliveryInfo\" : {\r\n        \"deliveryDate\" : \"2019-03-23T18:25:43.511Z\",\r\n        \"deliveryFee\" : \"50\",\r\n        \"inStock\" : true\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "{{base_rul}}/byDeliveryFeeLessThan/30",
+					"host": [
+						"{{base_rul}}"
+					],
+					"path": [
+						"byDeliveryFeeLessThan",
+						"30"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ByDeliveryInfoId",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"id\": \"5c8671fcf33c1f15b0529948\",\r\n    \"name\" : \"NASA Apollo Saturn V\",\r\n    \"difficulty\" : \"HARD\",\r\n    \"theme\" : \"NASA\",\r\n    \"reviews\" : [ \r\n        {\r\n            \"userName\" : \"Joe\",\r\n            \"rating\" : 9\r\n        },\r\n        {\r\n            \"userName\" : \"Mary\",\r\n            \"rating\" : 4\r\n        }\r\n    ],\r\n    \"deliveryInfo\" : {\r\n        \"deliveryDate\" : \"2019-03-23T18:25:43.511Z\",\r\n        \"deliveryFee\" : \"50\",\r\n        \"inStock\" : true\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "{{base_rul}}/byDeliveryInfo/5c8cc4d3f33c1f26147445a5",
+					"host": [
+						"{{base_rul}}"
+					],
+					"path": [
+						"byDeliveryInfo",
+						"5c8cc4d3f33c1f26147445a5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ByReviewsAboveAverage",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"id\": \"5c8671fcf33c1f15b0529948\",\r\n    \"name\" : \"NASA Apollo Saturn V\",\r\n    \"difficulty\" : \"HARD\",\r\n    \"theme\" : \"NASA\",\r\n    \"reviews\" : [ \r\n        {\r\n            \"userName\" : \"Joe\",\r\n            \"rating\" : 9\r\n        },\r\n        {\r\n            \"userName\" : \"Mary\",\r\n            \"rating\" : 4\r\n        }\r\n    ],\r\n    \"deliveryInfo\" : {\r\n        \"deliveryDate\" : \"2019-03-23T18:25:43.511Z\",\r\n        \"deliveryFee\" : \"50\",\r\n        \"inStock\" : true\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "{{base_rul}}/ByGreatReviews",
+					"host": [
+						"{{base_rul}}"
+					],
+					"path": [
+						"ByGreatReviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BestBuys",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"id\": \"5c8671fcf33c1f15b0529948\",\r\n    \"name\" : \"NASA Apollo Saturn V\",\r\n    \"difficulty\" : \"HARD\",\r\n    \"theme\" : \"NASA\",\r\n    \"reviews\" : [ \r\n        {\r\n            \"userName\" : \"Joe\",\r\n            \"rating\" : 9\r\n        },\r\n        {\r\n            \"userName\" : \"Mary\",\r\n            \"rating\" : 4\r\n        }\r\n    ],\r\n    \"deliveryInfo\" : {\r\n        \"deliveryDate\" : \"2019-03-23T18:25:43.511Z\",\r\n        \"deliveryFee\" : \"50\",\r\n        \"inStock\" : true\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "{{base_rul}}/bestBuys",
+					"host": [
+						"{{base_rul}}"
+					],
+					"path": [
+						"bestBuys"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reporting-AvgRating",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"id\": \"5c8671fcf33c1f15b0529948\",\r\n    \"name\" : \"NASA Apollo Saturn V\",\r\n    \"difficulty\" : \"HARD\",\r\n    \"theme\" : \"NASA\",\r\n    \"reviews\" : [ \r\n        {\r\n            \"userName\" : \"Joe\",\r\n            \"rating\" : 9\r\n        },\r\n        {\r\n            \"userName\" : \"Mary\",\r\n            \"rating\" : 4\r\n        }\r\n    ],\r\n    \"deliveryInfo\" : {\r\n        \"deliveryDate\" : \"2019-03-23T18:25:43.511Z\",\r\n        \"deliveryFee\" : \"50\",\r\n        \"inStock\" : true\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "{{base_rul}}/avgRatingsReport",
+					"host": [
+						"{{base_rul}}"
+					],
+					"path": [
+						"avgRatingsReport"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FullTextSearch",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"id\": \"5c8671fcf33c1f15b0529948\",\r\n    \"name\" : \"NASA Apollo Saturn V\",\r\n    \"difficulty\" : \"HARD\",\r\n    \"theme\" : \"NASA\",\r\n    \"reviews\" : [ \r\n        {\r\n            \"userName\" : \"Joe\",\r\n            \"rating\" : 9\r\n        },\r\n        {\r\n            \"userName\" : \"Mary\",\r\n            \"rating\" : 4\r\n        }\r\n    ],\r\n    \"deliveryInfo\" : {\r\n        \"deliveryDate\" : \"2019-03-23T18:25:43.511Z\",\r\n        \"deliveryFee\" : \"50\",\r\n        \"inStock\" : true\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "{{base_rul}}/fullTextSearch/dan",
+					"host": [
+						"{{base_rul}}"
+					],
+					"path": [
+						"fullTextSearch",
+						"dan"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "b1796f1d-0b2b-4937-a4a4-8f404f004fd1",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "6a280219-5d4f-4acf-a729-2539540ad96f",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "82d6ca8d-0630-4b2d-b739-120ccce5e3c5",
+			"key": "base_rul",
+			"value": "http://localhost:8082/legostore/api",
+			"type": "string"
+		}
+	]
+}
