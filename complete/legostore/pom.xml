@@ -42,7 +42,6 @@
         </dependency>
         -->
 
-        <!-- Query DSL
         <dependency>
             <groupId>com.querydsl</groupId>
             <artifactId>querydsl-mongodb</artifactId>
@@ -53,7 +52,6 @@
             <artifactId>querydsl-apt</artifactId>
             <version>4.0.0</version>
         </dependency>
-        -->
 
     </dependencies>
 
@@ -63,7 +61,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-            <!-- Query DSL Plugin
+
             <plugin>
                 <groupId>com.mysema.maven</groupId>
                 <artifactId>apt-maven-plugin</artifactId>
@@ -82,7 +80,7 @@
                     </execution>
                 </executions>
             </plugin>
-            -->
+
         </plugins>
     </build>
 

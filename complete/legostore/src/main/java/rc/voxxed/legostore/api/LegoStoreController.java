@@ -4,6 +4,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 import rc.voxxed.legostore.db.LegoSetRepository;
 import rc.voxxed.legostore.model.LegoSet;
+import rc.voxxed.legostore.model.QLegoSet;
 
 import java.util.Collection;
 
@@ -56,5 +57,28 @@ public class LegoStoreController {
     public Collection<LegoSet> byGreatReviews(){
         var cheapLegoSets = this.legoSetRepository.findByGoodReviews();
         return cheapLegoSets;
+    }
+
+    @GetMapping("/bestBuys")
+    public Collection<LegoSet> bestBuys(){
+        final int minRating = 8;
+        final int maxDeliveryPrice = 60;
+
+        var minRatingQuery = new QLegoSet("minRatingQuery")
+                .reviews.any().rating
+                .gt(minRating);
+        var maxDeliveryPriceQuery = new QLegoSet("maxDeliveryPriceQuery")
+                .deliveryInfo
+                .deliveryFee.lt(maxDeliveryPrice);
+        var inStockQuery = new QLegoSet("inStockQuery")
+                .deliveryInfo
+                .inStock
+                .isTrue();
+
+        var filter = minRatingQuery.and(maxDeliveryPriceQuery).and(inStockQuery);
+
+        var bestBuyLegoSets = this.legoSetRepository.findAll(filter);
+
+        return (Collection<LegoSet>) bestBuyLegoSets;
     }
 }
