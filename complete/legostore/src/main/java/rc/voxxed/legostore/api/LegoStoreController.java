@@ -3,6 +3,8 @@ package rc.voxxed.legostore.api;
 import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 import rc.voxxed.legostore.db.LegoSetRepository;
+import rc.voxxed.legostore.db.ReportingRepository;
+import rc.voxxed.legostore.model.AvgRatingModel;
 import rc.voxxed.legostore.model.LegoSet;
 import rc.voxxed.legostore.model.QLegoSet;
 
@@ -12,9 +14,11 @@ import java.util.Collection;
 @RequestMapping("legostore/api")
 public class LegoStoreController {
     private LegoSetRepository legoSetRepository;
+    private ReportingRepository reportingRepository;
 
-    public LegoStoreController(LegoSetRepository legoSetRepository) {
+    public LegoStoreController(LegoSetRepository legoSetRepository, ReportingRepository reportingRepository) {
         this.legoSetRepository = legoSetRepository;
+        this.reportingRepository = reportingRepository;
     }
 
     @PostMapping
@@ -80,5 +84,11 @@ public class LegoStoreController {
         var bestBuyLegoSets = this.legoSetRepository.findAll(filter);
 
         return (Collection<LegoSet>) bestBuyLegoSets;
+    }
+
+    @GetMapping("/avgRatingsReport")
+    public Collection<AvgRatingModel> avgRatingReport(){
+        var results = this.reportingRepository.getAvgRatingReport();
+        return results;
     }
 }
